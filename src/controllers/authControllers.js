@@ -1,10 +1,11 @@
 // import { PrismaClient } from "@prisma/client";
 const { PrismaClient } = require("@prisma/client");
 const bcrypt = require("bcrypt");
+const jwt = require("jsonwebtoken");
 
 const prisma = new PrismaClient();
 
-async function main() {
+async function signUp() {
   const hashedPassword = await bcrypt.hash("1234", 10);
   const createUser = await prisma.users.create({
     data: {
@@ -22,7 +23,7 @@ async function main() {
   console.log(createUser);
 }
 
-main()
+signUp()
   .then(async () => {
     await prisma.$disconnect();
   })

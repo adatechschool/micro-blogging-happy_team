@@ -12,6 +12,7 @@
   "dependencies": {
     "@prisma/client": "^6.5.0",
     "bcrypt": "^5.1.1",
+    "dotenv": "^16.4.7",
     "express": "^5.1.0",
     "jsonwebtoken": "^9.0.2",
     "pug": "^3.0.3"

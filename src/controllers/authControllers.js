@@ -1,6 +1,7 @@
 const {AuthModel} = require("../models/authModel");
 const bcrypt = require("bcrypt");
-
+const jwt = require("jsonwebtoken");
+const jwtKey = process.env.JWT_KEY
 
 const AuthController = {
   signUp: async (req, res) => {
@@ -17,9 +18,9 @@ const AuthController = {
     const passwordMatch = await bcrypt.compare(password, userInfo.password);
         if (!passwordMatch) {
             return "Identifiants incorrects"
-        } else {
-            console.log("Identification réussie!")
-        }
+        } 
+        const token = jwt.sign({id:Number(userInfo.id)}, jwtKey, {expiresIn: "3 hours"})
+        console.log(token)
   }
 }
 

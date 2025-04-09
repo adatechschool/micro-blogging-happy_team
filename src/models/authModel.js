@@ -26,6 +26,7 @@ const AuthModel = {
                 email : email
             },
             select:{ 
+                id: true,
                 email:true, 
                 password:true
             }

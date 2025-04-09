@@ -1,18 +1,20 @@
 // import { PrismaClient } from "@prisma/client";
 const { PrismaClient } = require("@prisma/client");
+const bcrypt = require("bcrypt");
 
 const prisma = new PrismaClient();
 
 async function main() {
+  const hashedPassword = await bcrypt.hash("1234", 10);
   const createUser = await prisma.users.create({
     data: {
       username: "lapin",
-      pseudo: "LaurianeTheBest",
+      pseudo: "Gweny",
       firstname: "Lauriane",
       lastname: "pirouette",
       biography: "ancienne patineuse jeux olympiques",
-      email: "lauriane.tr@gmail.com",
-      password: "1234",
+      email: "gweny.tr@gmail.com",
+      password: hashedPassword,
       created_at: new Date(),
       updated_at: new Date(),
     },

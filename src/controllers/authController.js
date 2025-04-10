@@ -12,7 +12,7 @@ const AuthController = {
 
   logIn: async (req, res) => {
     const email = "laura.tr@gmail.com";
-    const password = "123";
+    const password = "1234";
     const userInfo = await AuthModel.logIn(email);
 
     const passwordMatch = await bcrypt.compare(password, userInfo.password);

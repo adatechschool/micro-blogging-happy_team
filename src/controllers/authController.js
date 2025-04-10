@@ -14,7 +14,6 @@ const AuthController = {
       email,
       hashedPassword
     );
-
     res.send("Inscription réussie");
   },
 
@@ -24,14 +23,14 @@ const AuthController = {
     const passwordMatch = await bcrypt.compare(password, userInfo.password);
 
     if (!passwordMatch) {
-      console.log("try again");
       res.send("Identifiants incorrects");
     }
     const token = jwt.sign({ id: Number(userInfo.id) }, jwtKey, {
       expiresIn: "3 hours",
     });
-    console.log("good job !");
-    res.send("Connexion réussie");
+    res.cookie("token", token, {httpOnly: true})
+    res.redirect('/home')
+    //res.send("Connexion réussie");
   },
 };
 

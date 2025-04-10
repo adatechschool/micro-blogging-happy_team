@@ -5,17 +5,23 @@ const jwtKey = process.env.JWT_KEY;
 
 const AuthController = {
   signUp: async (req, res) => {
-    const hashedPassword = await bcrypt.hash("1234", 10);
-    const user = await AuthModel.createUser(hashedPassword);
+    const { username, pseudo, biography, email, password } = req.body;
+    const hashedPassword = await bcrypt.hash(password, 10);
+    const user = await AuthModel.createUser(
+      username,
+      pseudo,
+      biography,
+      email,
+      hashedPassword
+    );
     res.send("Inscription réussie");
   },
 
   logIn: async (req, res) => {
-    const email = "laura.tr@gmail.com";
-    const password = "1234";
+    const { email, password } = req.body;
     const userInfo = await AuthModel.logIn(email);
-
     const passwordMatch = await bcrypt.compare(password, userInfo.password);
+
     if (!passwordMatch) {
       res.send("Identifiants incorrects");
     }

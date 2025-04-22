@@ -1,6 +1,5 @@
 const { PostModel } = require("../models/postModel");
 const { UserModel } = require("../models/userModel");
-const pug = require('pug');
 
 const PostController = {
     getHomeData: async (req, res) => {

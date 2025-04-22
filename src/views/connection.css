@@ -66,11 +66,13 @@ body {
   margin-bottom: 1.5rem;
   transition: border-color 0.3s;
   background-color: rgba(255, 255, 255, 0.8);
+  color: rgba(0, 0, 0, 0.6);
 }
 .formulaire input:focus {
   border-color: var(--violet);
   outline: none;
 }
+
 button {
   width: 100%;
   background-color: var(--rose);

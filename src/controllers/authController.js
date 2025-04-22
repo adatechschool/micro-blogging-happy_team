@@ -14,7 +14,8 @@ const AuthController = {
       email,
       hashedPassword
     );
-    res.send("Inscription réussie");
+    res.redirect("/");
+    // res.send("Inscription réussie");
   },
 
   logIn: async (req, res) => {
@@ -28,8 +29,8 @@ const AuthController = {
     const token = jwt.sign({ id: Number(userInfo.id) }, jwtKey, {
       expiresIn: "3 hours",
     });
-    res.cookie("token", token, {httpOnly: true})
-    res.redirect('/home')
+    res.cookie("token", token, { httpOnly: true });
+    res.redirect("/home");
     //res.send("Connexion réussie");
   },
 };

@@ -11,7 +11,7 @@ html
                 h5.pseudo @#{user.pseudo}
                 .biography #{user.biography}
 
-            button.modifyBtn Modifier
+            a(href="/update-profile"): button.modifyBtn Modifier
         .main
             h1 Bienvenue sur ton fil de positivité #{user.username} !
 

@@ -1,10 +1,11 @@
 const express = require("express");
 const authController = require("./controllers/authController");
+const { PostController } = require("./controllers/postController");
+const { UserController } = require("./controllers/userController");
 const path = require("path");
 const { PrismaClient } = require("@prisma/client");
 const jwt = require("jsonwebtoken");
 const cookieParser = require("cookie-parser");
-const { HomeController } = require("./controllers/homeController");
 
 const app = express();
 const port = 3000;
@@ -38,16 +39,18 @@ app.post("/signup", authController.signUp);
 app.post("/login", authController.logIn);
 
 app.get("/", (req, res) => {
-  res.render("connection", { title: "Hey", message: "Hello there!" });
+  res.render("connection");
 });
 
 app.get("/inscription", (req, res) => {
   res.render("inscription");
 });
 
-app.get("/home", verifyToken, HomeController.getHomeData);
+app.get("/home", verifyToken, PostController.getHomeData);
+app.post("/add-post", verifyToken, PostController.createPost);
 
-app.post("/add-post", verifyToken, HomeController.createPost);
+app.get("/update-profile", verifyToken, UserController.getUser);
+app.post("/update-user", verifyToken, UserController.updateUser);
 
 app.listen(port, () => {
   console.log("serveur sur le port ", port);

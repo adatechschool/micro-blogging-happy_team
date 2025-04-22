@@ -1,9 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
 :root {
   --violet: #6e2390;
   --rose: #fc466b;
   --orange: #ffa580;
-  --fond-page: rgba(255, 255, 255, 0.3);
+  --fond-page: rgba(255, 255, 255, 0.3); /* Transparence légère */
   --blanc: #ffffff;
   --gris-foncé: #2e2e2e;
 }
@@ -23,35 +24,38 @@ body {
   align-items: center;
   padding: 3rem 1rem;
 }
-
-.inscription-container {
-  max-width: 500px;
+.layout {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  gap: 3rem;
+  max-width: 1000px;
   width: 100%;
+}
+.left-content,
+.form-container {
+  flex: 1;
   background: var(--fond-page);
-  padding: 2.5rem;
   border-radius: 1.5rem;
-  backdrop-filter: blur(1px);
+  padding: 2.5rem;
+  backdrop-filter: blur(1px); /* Flou derrière le bloc */
   -webkit-backdrop-filter: blur(10px);
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+.description {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #fc466b;
 }
 .formulaire {
   width: 100%;
 }
-.form-title {
-  text-align: center;
-  font-size: 2rem;
-  font-weight: 600;
-  margin-bottom: 2rem;
-  color: var(--rose);
-}
 .formulaire label {
   display: block;
-  position: absolute;
   margin-bottom: 0.5rem;
   font-weight: 600;
   color: #fc466b;
   font-size: 1rem;
-  transform: translateY(-70%);
 }
 .formulaire input {
   width: 100%;
@@ -68,6 +72,7 @@ body {
   border-color: var(--violet);
   outline: none;
 }
+
 button {
   width: 100%;
   background-color: var(--rose);
@@ -84,10 +89,15 @@ button:hover {
   background-color: var(--orange);
 }
 @media (max-width: 768px) {
+  .layout {
+    flex-direction: column;
+    gap: 2rem;
+  }
+  .left-content,
+  .form-container {
+    padding: 2rem;
+  }
   body {
     padding: 2rem 1rem;
-  }
-  .inscription-container {
-    padding: 2rem;
   }
 }

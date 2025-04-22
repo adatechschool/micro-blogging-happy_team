@@ -5,17 +5,14 @@ html(lang="fr")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
         title Inscription - Blog Positif
         //- link(rel="stylesheet", href="inscription.css")
-        link(
-        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap",
-        rel="stylesheet"
-        )
+       
         style
             include inscription.css
     body
         .inscription-container
-            form.formulaire(action="/inscription", method="POST")
+            form.formulaire(action="/signup", method="POST")
                 h2.form-title Créer un compte
-                    label(for="username") Nom complet
+                    label(for="username") Nom d'utilisateur
                     input#username(type="text", name="username", placeholder="Joe Joe", required)
                     label(for="pseudo") Pseudo
                     input#pseudo(type="text", name="pseudo", placeholder="joe123", required)

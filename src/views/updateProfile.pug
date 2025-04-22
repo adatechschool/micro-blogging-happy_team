@@ -1,0 +1,16 @@
+html
+    head
+        style
+    body
+        .main
+            h1 Modifier votre profil
+
+            form.formUpdate(action="/update-user" method="POST")
+                input(type="text" name= "username" value=user.username)
+                input(type="text" name="pseudo" value=user.pseudo readonly="readonly")
+                input(type="text" name= "firstname" value=user.firstname)
+                input(type="text" name= "lastname" value=user.lastname)
+                input(type="text" name= "email" value=user.email)
+                input(type="textarea" name= "biography" value=user.biography)
+                //input(type="password" name= "password" value=user.password placeholder="*****")
+                button(type="submit") Valider

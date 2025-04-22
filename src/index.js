@@ -41,6 +41,10 @@ app.get("/", (req, res) => {
   res.render("connection", { title: "Hey", message: "Hello there!" });
 });
 
+app.get("/inscription", (req, res) => {
+  res.render("inscription")
+})
+
 app.get("/home", verifyToken, HomeController.getHomeData);
 
 app.post("/add-post", verifyToken, HomeController.createPost);

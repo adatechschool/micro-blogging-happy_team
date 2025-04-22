@@ -4,7 +4,7 @@ const path = require("path");
 const { PrismaClient } = require("@prisma/client");
 const jwt = require("jsonwebtoken");
 const cookieParser = require('cookie-parser');
-const { HomeController } = require("./controllers/homeController");
+const { PostController } = require("./controllers/postController");
 
 const app = express();
 const port = 3000;
@@ -41,9 +41,9 @@ app.get("/", (req, res) => {
   res.render("connection", { title: "Hey", message: "Hello there!" });
 });
 
-app.get("/home", verifyToken, HomeController.getHomeData);
+app.get("/home", verifyToken, PostController.getHomeData);
 
-app.post("/add-post", verifyToken, HomeController.createPost);
+app.post("/add-post", verifyToken, PostController.createPost);
 
 app.listen(port, () => {
   console.log("serveur sur le port ", port);

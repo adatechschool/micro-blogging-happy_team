@@ -1,11 +1,12 @@
-const { HomeModel } = require("../models/homeModel")
+const { PostModel } = require("../models/postModel");
+const { UserModel } = require("../models/userModel");
 const pug = require('pug');
 
-const HomeController = {
+const PostController = {
     getHomeData: async (req, res) => {
         const userId = req.user.id;
-        const connectedUser = await HomeModel.getUser(userId);
-        const allPosts = await HomeModel.getPosts();
+        const connectedUser = await UserModel.getUser(userId);
+        const allPosts = await PostModel.getPosts();
         
         res.render("home", { 
         user: connectedUser,
@@ -18,7 +19,7 @@ const HomeController = {
         const userId = req.user.id;
 
         try{
-        const newPost = await HomeModel.createPost(content, userId);
+        const newPost = await PostModel.createPost(content, userId);
         res.redirect('/home');
         } catch(error) {
             console.error("Erreur lors de la création du post: ", error)
@@ -28,5 +29,5 @@ const HomeController = {
 };
 
 module.exports = {
-    HomeController
+    PostController: PostController
 };

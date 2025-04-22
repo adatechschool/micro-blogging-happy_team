@@ -29,7 +29,7 @@ const HomeModel = {
               }
             },
             orderBy: {
-              created_at: 'desc' // Pour avoir les posts les plus récents d'abord
+              created_at: 'desc'
             }
           })
         return allPosts

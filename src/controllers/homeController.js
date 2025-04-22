@@ -2,20 +2,6 @@ const { HomeModel } = require("../models/homeModel")
 const pug = require('pug');
 
 const HomeController = {
-//     getUser: async (req, res) => {
-//         const userId = req.user.id;
-//         console.log("Connecté sur l'utilisateur", userId)
-//         const connectedUser = await HomeModel.getUser(userId)
-
-//         res.render("home", {user: connectedUser})
-// },
-//     getAllPosts: async (req, res) => {
-//         const allPosts = await HomeModel.getPosts()
-//         console.log(allPosts)
-
-//         res.render("home", { allPosts: allPosts} ) //Appel user + posts ? 
-//     },
-
     getHomeData: async (req, res) => {
         const userId = req.user.id;
         const connectedUser = await HomeModel.getUser(userId);

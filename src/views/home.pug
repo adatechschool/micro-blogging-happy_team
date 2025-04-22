@@ -1,3 +1,27 @@
 html 
-    body   
-        h1 Welcome home
+    head 
+        style
+            include style.css
+    body
+        aside.sidebar: h1 Good vibes only
+            h3 Votre profil
+            .userInfo
+                img.userIcon(src='/icons/user.png')
+                h4.username #{user.username}
+                h5.pseudo @#{user.pseudo}
+                .biography #{user.biography}
+
+            button.modifyBtn Modifier
+        .main
+            h1 Bienvenue sur ton fil de positivité #{user.username} !
+
+            form.creation(action="/add-post" method="POST")
+                input(type="text" name="content" placeholder="Rédiger un nouveau post..")
+                button(type="submit") Créer
+
+            for post in AllPosts
+                .post
+                    h4 Posté par #{post.users.username} (@#{post.users.pseudo}) 
+                    p #{post.content}
+                    p=new Date(post.created_at).toLocaleString()
+            

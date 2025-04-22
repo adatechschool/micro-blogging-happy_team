@@ -10,7 +10,7 @@ html
                     | Bienvenue sur notre réseau social positif ! Ici, nous partageons plus
                     | que des moments : des émotions, des leçons de vie et des inspirations.
                     | Rejoins-nous pour célébrer la beauté de chaque jour.
-                    button(type="submit") Inscription
+                    a(href="/inscription"): button Inscription
             .form-container
                 form.formulaire(action="/login", method="POST")
                     label(for="email") Email

@@ -3,8 +3,8 @@ html
         style
             include profile.css
     body
-        aside.sidebar: h1 Good vibes only
-            h3 Votre profil
+        aside.sidebar: h1.title Good vibes only
+            h3.yourProfile Ton profil
             .userInfo
                 img.userIcon(src='/icons/user.png')
                 h4.username #{user.username}
@@ -13,7 +13,10 @@ html
 
             a(href="/update-profile"): button.modifyBtn Modifier
         .main
-            h1 Voici ton fil personnel #{user.username} !
+            h1.pageTitle 
+                | Voici ton fil personnel 
+                span.titleUsername #{user.username}
+                |  !
 
 
             for post in personalPosts

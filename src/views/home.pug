@@ -1,10 +1,10 @@
 html 
     head 
         style
-            include style.css
+            include home.css
     body
-        aside.sidebar: h1 Good vibes only
-            h3 Votre profil
+        aside.sidebar: h1.title Good vibes only
+            h3.yourProfile Ton profil
             .userInfo
                 img.userIcon(src='/icons/user.png')
                 h4.username #{user.username}
@@ -13,10 +13,13 @@ html
 
             a(href="/update-profile"): button.modifyBtn Modifier
         .main
-            h1 Bienvenue sur ton fil de positivité #{user.username} !
+            h1.pageTitle 
+                | Bienvenue sur ton fil de positivité 
+                span.titleUsername #{user.username}
+                |  !
 
             form.creation(action="/add-post" method="POST")
-                input(type="text" name="content" placeholder="Rédiger un nouveau post..")
+                textarea(name="content" placeholder="Rédiger un nouveau post.." rows="7" cols="33")
                 button(type="submit") Créer
 
             for post in AllPosts

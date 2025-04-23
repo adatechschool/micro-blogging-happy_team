@@ -78,7 +78,11 @@ body {
   font-style: italic;
 }
 
-.modifyBtn {
+.biography {
+  overflow-wrap: break-word;
+}
+.modifyBtn,
+.profileBtn {
   width: 100%;
   background-color: var(--rose);
   color: var(--blanc);
@@ -92,7 +96,8 @@ body {
   margin-top: 1rem;
 }
 
-.modifyBtn:hover {
+.modifyBtn:hover,
+.profileBtn:hover {
   background-color: var(--orange);
 }
 
@@ -187,7 +192,9 @@ body {
   align-self: flex-start;
   transition: transform 0.2s ease;
 }
-
+.post h4 {
+  color: var(--rose);
+}
 .post:hover {
   transform: translateY(-2px);
 }

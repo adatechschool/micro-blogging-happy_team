@@ -14,7 +14,7 @@
   box-sizing: border-box;
 }
 body {
-  /* font-family: "Poppins", sans-serif; */
+  font-family: "Poppins", sans-serif;
   background: url("/frizoti.jpg") no-repeat center center fixed;
   background-size: cover;
   color: var(--gris-foncé);

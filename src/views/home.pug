@@ -16,7 +16,7 @@ html
             h1 Bienvenue sur ton fil de positivité #{user.username} !
 
             form.creation(action="/add-post" method="POST")
-                input(type="text" name="content" placeholder="Rédiger un nouveau post..")
+                textarea(name="content" placeholder="Rédiger un nouveau post.." row="5")
                 button(type="submit") Créer
 
             for post in AllPosts
@@ -24,4 +24,3 @@ html
                     h4 Posté par #{post.users.username} (@#{post.users.pseudo}) 
                     p #{post.content}
                     p=new Date(post.created_at).toLocaleString()
-            

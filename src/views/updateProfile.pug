@@ -15,7 +15,7 @@ html
                     label Email
                     input(type="text" name= "email" value=user.email)
                     label Biographie
-                    textarea(name= "biography" value=user.biography rows="5" cols="78" maxlength="150")
+                    textarea(name= "biography" rows="5" cols="78" maxlength="150") #{user.biography}
                     //label Mot de passe
                     //input(type="password" name= "password" value=user.password placeholder="*****")
                     .button-container 

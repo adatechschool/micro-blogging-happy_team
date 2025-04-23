@@ -116,6 +116,7 @@ body {
   align-self: center;
   text-align: center;
   font-size: 2.5rem;
+  color: var(--violet);
 }
 
 .titleUsername {

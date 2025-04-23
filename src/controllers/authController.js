@@ -10,7 +10,7 @@ const AuthController = {
     const user = await AuthModel.createUser(
       username,
       pseudo,
-      biography,
+      // biography,
       email,
       hashedPassword
     );

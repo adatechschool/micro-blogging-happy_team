@@ -3,13 +3,13 @@ const { PrismaClient } = require("@prisma/client");
 const prisma = new PrismaClient();
 
 const AuthModel = {
-  createUser: async (username, pseudo, biography, email, password) => {
+  createUser: async (username, pseudo, email, password) => {
     //TODO: tout transformer en variable, un json?
     const result = await prisma.users.create({
       data: {
         username: username,
         pseudo: pseudo,
-        biography: biography,
+        // biography: biography,
         email: email,
         password: password,
       },

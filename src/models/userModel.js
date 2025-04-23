@@ -12,8 +12,6 @@ const UserModel = {
                 id: true,
                 username: true,
                 pseudo: true,
-                firstname: true,
-                lastname: true,
                 email: true,
                 biography:true,
                 password: true
@@ -22,15 +20,13 @@ const UserModel = {
         return connectedUser;
     },
 
-    updateUser: async (id, username, firstname, lastname, email, biography, password) => {
+    updateUser: async (id, username, email, biography, password) => {
         const updateUserById = await prisma.users.update({
             where: {
                 id: parseInt(id)
             },
             data: {
                 username: username,
-                firstname: firstname,
-                lastname: lastname,
                 email: email,
                 biography: biography,
                 // password: true

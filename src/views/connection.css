@@ -46,6 +46,7 @@ body {
   font-size: 1.1rem;
   line-height: 1.7;
   color: #fc466b;
+  margin-bottom: 65px;
 }
 .formulaire {
   width: 100%;
@@ -83,6 +84,7 @@ button {
   border-radius: 0.6rem;
   cursor: pointer;
   transition: background-color 0.3s ease;
+  margin-bottom: 0;
 }
 button:hover {
   background-color: var(--orange);

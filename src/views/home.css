@@ -101,6 +101,35 @@ body {
   background-color: var(--orange);
 }
 
+.logout{
+  margin-top: auto;
+  text-decoration: none;
+}
+
+.logoutBtn{
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 1rem;
+  background-color: var(--violet);
+  color: var(--blanc);
+  border: none;
+  border-radius: 0.5rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  align-self: flex-end;
+}
+
+.logoutBtn:hover{
+  background-color: var(--rose);
+}
+
+.logoutIcon {
+  height: 2rem;
+  width: auto;
+}
+
 .main {
   flex: 1;
   padding: 2rem;

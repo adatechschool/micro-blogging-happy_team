@@ -56,6 +56,8 @@ app.post("/delete-post/:id", verifyToken, PostController.deletePost)
 app.get("/update-profile", verifyToken, UserController.getUser);
 app.post("/update-user", verifyToken, UserController.updateUser);
 
+app.get("/deconnection", authController.logOut)
+
 app.listen(port, () => {
   console.log("serveur sur le port ", port);
 });

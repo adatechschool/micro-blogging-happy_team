@@ -33,6 +33,11 @@ const AuthController = {
     res.redirect("/home");
     //res.send("Connexion réussie");
   },
+
+  logOut: async (req, res) => {
+    res.clearCookie('token')
+    res.render("deconnection", {message: "Déconnexion réussie !" })
+  }
 };
 
 module.exports = AuthController;

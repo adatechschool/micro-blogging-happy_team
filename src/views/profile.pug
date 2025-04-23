@@ -13,6 +13,10 @@ html
 
             a(href="/update-profile"): button.modifyBtn Modifier
             a(href="/home"): button.homeBtn Accueil
+            a.logout(href="/deconnection")
+                button.logoutBtn
+                    img.logoutIcon(src='/icons/logout.png')
+                    |  Déconnexion
         .main
             h1.pageTitle 
                 | Voici tes posts 

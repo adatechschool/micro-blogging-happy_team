@@ -2,6 +2,7 @@ const express = require("express");
 const authController = require("./controllers/authController");
 const { PostController } = require("./controllers/postController");
 const { UserController } = require("./controllers/userController");
+const { ProfileController } = require("./controllers/profileController")
 const path = require("path");
 const { PrismaClient } = require("@prisma/client");
 const jwt = require("jsonwebtoken");
@@ -48,6 +49,8 @@ app.get("/inscription", (req, res) => {
 
 app.get("/home", verifyToken, PostController.getHomeData);
 app.post("/add-post", verifyToken, PostController.createPost);
+
+app.get("/profile", verifyToken, ProfileController.getProfileData)
 
 app.get("/update-profile", verifyToken, UserController.getUser);
 app.post("/update-user", verifyToken, UserController.updateUser);

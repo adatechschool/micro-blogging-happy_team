@@ -201,6 +201,20 @@ body {
 .delete:hover {
     background-color: var(--orange);
   }
+
+.no-post{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.7);
+  padding: 2.5rem;
+  border-radius: 1.5rem;
+  backdrop-filter: blur(1px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  text-align: center;
+}
+
 @media (max-width: 768px) {
   .sidebar {
     width: 90vw;

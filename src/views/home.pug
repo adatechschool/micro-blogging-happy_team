@@ -19,12 +19,11 @@ html
                 |  !
 
             form.creation(action="/add-post" method="POST")
-                textarea(name="content" placeholder="Rédiger un nouveau post.." rows="7" cols="33")
+                textarea(name="content" placeholder="Rédiger un nouveau post.." rows="3" cols="50")
                 button(type="submit") Créer
 
             for post in AllPosts
                 .post
                     h4 Posté par #{post.users.username} (@#{post.users.pseudo}) 
-                    p #{post.content}
-                    p=new Date(post.created_at).toLocaleString()
-            
+                    p.content  #{post.content}
+                    p.date=new Date(post.created_at).toLocaleString()

@@ -6,9 +6,7 @@ const { ProfileController } = require("./controllers/profileController")
 const path = require("path");
 const { PrismaClient } = require("@prisma/client");
 const jwt = require("jsonwebtoken");
-const cookieParser = require('cookie-parser');
-const { verify } = require("crypto");
-const postController = require("./controllers/postController");
+const cookieParser = require("cookie-parser");
 
 const app = express();
 const port = 3000;

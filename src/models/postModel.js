@@ -48,7 +48,7 @@ const PostModel = {
         }
       })
       return postsByUser
-    }
+    },
 };
 
 module.exports = {

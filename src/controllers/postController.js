@@ -6,11 +6,32 @@ const PostController = {
         const userId = req.user.id;
         const connectedUser = await UserModel.getUser(userId);
         const allPosts = await PostModel.getPosts();
-        
+
+        function searchHashtag(object) {
+            for (let i = 0; i < object.length; i++) {
+                const content = allPosts[i].content;
+                console.log("content: ", [i], content);
+
+                const regex = /#\w+/g;
+                const hashtags = content.match(regex);
+                console.log(hashtags);
+            }
+        }
+
+        // const contentWithHashtag = searchHashtag(allPosts);
+
+        function jesaispas(object) {
+            const allPosts = object;
+
+            allPosts.forEach((element) => console.log(element));
+        }
+
+        jesaispas(allPosts);
+
         res.render("home", { 
-        user: connectedUser,
-        AllPosts: allPosts
-    });
+            user: connectedUser,
+            AllPosts: allPosts,
+        });
     }, 
 
     createPost: async (req, res) => {

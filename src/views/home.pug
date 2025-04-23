@@ -25,5 +25,5 @@ html
             for post in AllPosts
                 .post
                     h4 Posté par #{post.users.username} (@#{post.users.pseudo}) 
-                    p.content  #{post.content}
+                    p.content #{post.content}
                     p.date=new Date(post.created_at).toLocaleString()

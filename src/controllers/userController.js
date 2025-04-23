@@ -15,12 +15,10 @@ const UserController = {
         const userId =  req.user.id;
         console.log(userId);
 
-        const { username, firstname, lastname, email, biography, password } = req.body;
+        const { username, email, biography, password } = req.body;
         const user = await UserModel.updateUser(
             userId,
             username,
-            firstname,
-            lastname,
             email,
             biography,
             // password

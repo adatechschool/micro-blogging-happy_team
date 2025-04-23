@@ -28,6 +28,26 @@ const PostModel = {
         }
       });
       return newPost;
+    },
+
+    getPostsByUser: async (userId) => {
+      const postsByUser = await prisma.posts.findMany({
+        where: {
+          user_id: userId
+        },
+        include: {
+          users: {
+            select: {
+              pseudo: true,
+              username: true
+            }
+          }
+        },
+        orderBy: {
+          created_at: 'desc'
+        }
+      })
+      return postsByUser
     }
 };
 

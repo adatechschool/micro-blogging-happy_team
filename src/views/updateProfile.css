@@ -26,7 +26,11 @@ body {
   align-items: center;
   padding: 3rem 1rem;
 }
-
+h1 {
+  margin-bottom: 1rem;
+  text-align: center;
+  color: var(--violet);
+}
 .main {
   display: flex;
   justify-content: center;
@@ -94,7 +98,6 @@ textarea:focus {
 }
 
 button {
-  width: 100%;
   background-color: var(--rose);
   color: var(--blanc);
   border: none;
@@ -108,6 +111,15 @@ button {
 
 button:hover {
   background-color: var(--orange);
+}
+
+.homeBtn {
+  background-color: var(--violet);
+}
+.button-container {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
 }
 
 @media (max-width: 768px) {

@@ -7,6 +7,8 @@ const path = require("path");
 const { PrismaClient } = require("@prisma/client");
 const jwt = require("jsonwebtoken");
 const cookieParser = require('cookie-parser');
+const { verify } = require("crypto");
+const postController = require("./controllers/postController");
 
 const app = express();
 const port = 3000;
@@ -51,6 +53,7 @@ app.get("/home", verifyToken, PostController.getHomeData);
 app.post("/add-post", verifyToken, PostController.createPost);
 
 app.get("/profile", verifyToken, ProfileController.getProfileData)
+app.post("/delete-post/:id", verifyToken, PostController.deletePost)
 
 app.get("/update-profile", verifyToken, UserController.getUser);
 app.post("/update-user", verifyToken, UserController.updateUser);

@@ -24,4 +24,6 @@ html
                     h4 Posté par #{post.users.username} (@#{post.users.pseudo}) 
                     p #{post.content}
                     p=new Date(post.created_at).toLocaleString()
+                    form(action=`/delete-post/${post.id}` method="POST" class="delete-form")
+                        button.delete(type="submit") 🗑
             

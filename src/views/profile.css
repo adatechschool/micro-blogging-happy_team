@@ -114,7 +114,8 @@ body {
 }
 
 .post{
-    /* border: solid 1px black; */
+    display: flex;
+    flex-direction: column;
     margin-bottom: 0.5rem;
     width: 100%;
     background: rgba(255, 255, 255, 0.7);
@@ -126,3 +127,21 @@ body {
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
     align-self: flex-start;
 }
+
+.delete{
+    /* width: 100%; */
+    background-color: var(--violet);
+    color: var(--blanc);
+    border: none;
+    padding: 0 0.5rem 0 0.5rem;
+    font-size: 2rem;
+    font-weight: bold;
+    border-radius: 0.6rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;   
+    margin-top: 1rem;
+}
+
+.delete:hover {
+    background-color: var(--orange);
+  }

@@ -197,13 +197,27 @@ body {
   margin: 0;
 }
 
+.update {
+  background-color: var(--rose);
+  border: none;
+  padding: 0.5rem;
+  border-radius: 0.6rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 0;
+}
+
+.update img {
+  width: 1.5rem;
+}
+.update:hover {
+  background-color: var(--violet);
+}
+
 .delete {
   background-color: var(--violet);
-  color: var(--blanc);
   border: none;
-  padding: 0 0.5rem 0 0.5rem;
-  font-size: 1.5rem;
-  font-weight: bold;
+  padding: 0.5rem;
   border-radius: 0.6rem;
   cursor: pointer;
   transition: background-color 0.3s ease;
@@ -211,7 +225,7 @@ body {
 }
 
 .delete:hover {
-  background-color: var(--orange);
+  background-color: var(--rose);
 }
 
 .no-post {

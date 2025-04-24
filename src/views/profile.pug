@@ -30,9 +30,9 @@ html
                         p.content #{post.content}
                         .bottom-info
                             p.date=new Date(post.created_at).toLocaleString()
-                            a(href=`/post/${post.id}`): button Modifier
+                            a(href=`/post/${post.id}`): button.update: img(src='/icons/editw.png' title='Modifier')
                             form(action=`/delete-post/${post.id}` method="POST" class="delete-form")
-                                button.delete(type="submit") 🗑
+                                button.delete(type="submit"): img(src='/icons/trash.png' title='Supprimer')
             else
                 .no-post
                     h3 Tu n'as pas encore de post. Créer ton premier post dès maintenant depuis la page d'accueil !

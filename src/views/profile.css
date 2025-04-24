@@ -99,12 +99,12 @@ body {
   background-color: var(--orange);
 }
 
-.logout{
+.logout {
   margin-top: auto;
   text-decoration: none;
 }
 
-.logoutBtn{
+.logoutBtn {
   display: flex;
   align-items: center;
   gap: 0.5rem;
@@ -119,7 +119,7 @@ body {
   align-self: flex-end;
 }
 
-.logoutBtn:hover{
+.logoutBtn:hover {
   background-color: var(--rose);
 }
 
@@ -160,61 +160,61 @@ body {
   transform: translateY(-2px);
 }
 
-.post{
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 0.5rem;
-    width: 100%;
-    background: rgba(255, 255, 255, 0.7);
-    padding: 2.5rem;
-    padding-top: 1rem ;
-    border-radius: 1.5rem;
-    backdrop-filter: blur(1px);
-    -webkit-backdrop-filter: blur(10px);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-    align-self: flex-start;
+.post {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 0.5rem;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.7);
+  padding: 2.5rem;
+  padding-top: 1rem;
+  border-radius: 1.5rem;
+  backdrop-filter: blur(1px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  align-self: flex-start;
 }
 
 .content {
-    margin: 0.5rem 0 0.5rem 0;
-  }
-
-.bottom-info{
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    gap: 1rem;
-    width: 100%;
-    /* margin-top: 0; */
+  margin: 0.5rem 0 0.5rem 0;
 }
 
-.bottom-info form{
-    margin: 0;
+.bottom-info {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+  /* margin-top: 0; */
+}
+
+.bottom-info form {
+  margin: 0;
 }
 
 .date {
-    align-self: flex-end;
-    margin: 0;
+  align-self: flex-end;
+  margin: 0;
 }
 
-.delete{
-    background-color: var(--violet);
-    color: var(--blanc);
-    border: none;
-    padding: 0 0.5rem 0 0.5rem;
-    font-size: 1.5rem;
-    font-weight: bold;
-    border-radius: 0.6rem;
-    cursor: pointer;
-    transition: background-color 0.3s ease;   
-    margin-top: 0;
+.delete {
+  background-color: var(--violet);
+  color: var(--blanc);
+  border: none;
+  padding: 0 0.5rem 0 0.5rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+  border-radius: 0.6rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 0;
 }
 
 .delete:hover {
-    background-color: var(--orange);
-  }
+  background-color: var(--orange);
+}
 
-.no-post{
+.no-post {
   display: flex;
   flex-direction: column;
   width: 100%;

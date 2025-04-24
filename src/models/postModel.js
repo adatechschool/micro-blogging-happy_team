@@ -33,7 +33,7 @@ const PostModel = {
   getPostsByUser: async (userId) => {
     const postsByUser = await prisma.posts.findMany({
       where: {
-        user_id: userId,
+        user_id: parseInt(userId),
       },
       include: {
         users: {
@@ -53,7 +53,7 @@ const PostModel = {
   getPostById: async (postId) => {
     const post = await prisma.posts.findUnique({
       where: {
-        id: postId,
+        id: parseInt(postId),
       },
       select: {
         id: true,
@@ -75,7 +75,7 @@ const PostModel = {
   updatePost: async (postId, contentUpdate) => {
     const updatedPost = await prisma.posts.update({
       where: {
-        id: postId,
+        id: parseInt(postId),
       },
       data: {
         content: contentUpdate,
@@ -87,7 +87,7 @@ const PostModel = {
   deletePost: async (postId) => {
     const deletedPost = await prisma.posts.delete({
       where: {
-        id: postId,
+        id: parseInt(postId),
       },
     });
   },

@@ -55,15 +55,21 @@ const PostModel = {
       where: {
         id: postId,
       },
-      include: {
-        users: {
-          select: {
-            pseudo: true,
-            username: true,
-          },
-        },
+      select: {
+        id: true,
+        content: true,
+        user_id: true,
       },
+      // include: {
+      //   users: {
+      //     select: {
+      //       pseudo: true,
+      //       username: true,
+      //     },
+      //   },
+      // },
     });
+    return post;
   },
 
   updatePost: async (postId, contentUpdate) => {

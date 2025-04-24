@@ -23,16 +23,16 @@ html
                 span.titleUsername #{user.username}
                 |  !
 
-            if personnalPosts && personnalPosts.length > 0
+            if personalPosts && personalPosts.length > 0
                 for post in personalPosts
                     .post
                         h4 Posté par #{post.users.username} (@#{post.users.pseudo}) 
                         p.content #{post.content}
                         .bottom-info
                             p.date=new Date(post.created_at).toLocaleString()
+                            a(href=`/post/${post.id}`): button Modifier
                             form(action=`/delete-post/${post.id}` method="POST" class="delete-form")
                                 button.delete(type="submit") 🗑
-            
             else
                 .no-post
                     h3 Tu n'as pas encore de post. Créer ton premier post dès maintenant depuis la page d'accueil !

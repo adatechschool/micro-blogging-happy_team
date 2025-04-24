@@ -41,7 +41,13 @@ const PostController = {
   getPostById: async (req, res) => {
     const postId = req.params.id;
     const post = await PostModel.getPostById(postId);
-    res.render("updatePost", { post: post });
+    const userId = req.user.id;
+    console.log(post);
+    if (post.user_id == userId) {
+      res.render("updatePost", { post: post });
+    } else {
+      res.send("Ce post ne vous appartient pas !");
+    }
   },
 
   createPost: async (req, res) => {

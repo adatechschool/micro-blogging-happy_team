@@ -7,13 +7,13 @@ html
             h3.yourProfile Ton profil
             .userInfo
                 img.userIcon(src='/icons/user.png')
-                h4.username #{user.username}
-                h5.pseudo @#{user.pseudo}
+                p.username #{user.username}
+                p.pseudo @#{user.pseudo}
                 .biography #{user.biography}
 
             a(href="/update-profile"): button.modifyBtn Modifier
             a(href="/profile"): button.profileBtn Mon profil
-            a.logout(href="/deconnection")
+            a.logout(href="/disconnection")
                 button.logoutBtn
                     img.logoutIcon(src='/icons/logout.png')
                     |  Déconnexion

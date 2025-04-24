@@ -65,17 +65,19 @@ body {
   border: solid 2px var(--violet);
   border-radius: var(--radius);
   padding: 1rem;
+  background-color: rgba(255, 255, 255, 0.7);
 }
 
 .username {
   margin-bottom: 0;
+  font-size: 1.1rem;
 }
 
 .pseudo {
   padding: 0;
   margin-top: 0;
   margin-bottom: 0.5rem;
-  font-style: italic;
+  font-style: oblique;
 }
 
 .biography {
@@ -110,7 +112,7 @@ body {
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  padding: 0.6rem 1rem;
+  padding: 0.3rem 0.5rem;
   background-color: var(--violet);
   color: var(--blanc);
   border: none;
@@ -126,7 +128,7 @@ body {
 }
 
 .logoutIcon {
-  height: 2rem;
+  height: 1.5rem;
   width: auto;
 }
 
@@ -180,6 +182,7 @@ body {
   min-height: 6rem;
   font-family: inherit;
   background: rgba(255, 255, 255, 0);
+  max-height: 6rem;
 }
 
 .creation textarea::placeholder {

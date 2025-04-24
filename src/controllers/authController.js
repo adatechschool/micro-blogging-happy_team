@@ -36,7 +36,7 @@ const AuthController = {
 
   logOut: async (req, res) => {
     res.clearCookie('token')
-    res.render("deconnection", {message: "Déconnexion réussie !" })
+    res.render("disconnection", {message: "Déconnexion réussie !" })
   }
 };
 

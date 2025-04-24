@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
 :root {
   --violet: #6e2390;
   --rose: #fc466b;
@@ -7,11 +8,13 @@
   --blanc: #ffffff;
   --gris-foncé: #2e2e2e;
 }
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+
 body {
   font-family: "Poppins", sans-serif;
   background: url("/frizoti.jpg") no-repeat center center fixed;
@@ -23,6 +26,7 @@ body {
   align-items: center;
   padding: 3rem 1rem;
 }
+
 .inscription-container {
   max-width: 500px;
   width: 100%;
@@ -33,9 +37,11 @@ body {
   -webkit-backdrop-filter: blur(10px);
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
 }
+
 .formulaire {
   width: 100%;
 }
+
 .form-title {
   text-align: center;
   font-size: 2rem;
@@ -43,6 +49,7 @@ body {
   margin-bottom: 2rem;
   color: var(--rose);
 }
+
 .formulaire label {
   display: block;
   position: absolute;
@@ -52,6 +59,7 @@ body {
   font-size: 1rem;
   transform: translateY(-70%);
 }
+
 .formulaire input {
   width: 100%;
   padding: 0.9rem;
@@ -63,10 +71,12 @@ body {
   background-color: rgba(255, 255, 255, 0.8);
   color: rgba(0, 0, 0, 0.6);
 }
+
 .formulaire input:focus {
   border-color: var(--violet);
   outline: none;
 }
+
 button {
   width: 100%;
   background-color: var(--rose);
@@ -79,13 +89,16 @@ button {
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
+
 button:hover {
   background-color: var(--orange);
 }
+
 @media (max-width: 768px) {
   body {
     padding: 2rem 1rem;
   }
+  
   .inscription-container {
     padding: 2rem;
   }

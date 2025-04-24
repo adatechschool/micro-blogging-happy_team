@@ -23,8 +23,28 @@ html
                 textarea(name="content" placeholder="Rédiger un nouveau post.." rows="3" cols="50")
                 button(type="submit") Créer
 
-            for post in AllPosts
+            // for post in AllPosts
+            //     .post
+            //         h4 Posté par #{post.users.username} (@#{post.users.pseudo})
+            //         p.content
+            //             p.content
+            //                 - const text = post.content
+            //                 - const parts = text.split(/(#\w+)/g)
+            //                 each part in parts
+            //                     if part.startsWith('#')
+            //                         span.hashtag #{part}
+            //                     else
+            //                         | #{part}
+            //         p.date=new Date(post.created_at).toLocaleString()
+
+            for post in allPosts
                 .post
-                    h4 Posté par #{post.users.username} (@#{post.users.pseudo}) 
-                    p.content  #{post.content}
+                    h4 Posté par #{post.users.username} (@#{post.users.pseudo})
+                    p.content
+                        - const words = post.content.split(/(\s+)/)
+                            each word in words
+                                if word.match(/^#\w+/)
+                                    span.hashtag #{word}
+                                else
+                                    | #{word}
                     p.date=new Date(post.created_at).toLocaleString()

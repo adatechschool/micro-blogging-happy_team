@@ -50,6 +50,12 @@ const PostController = {
             console.error("Erreur lors de la création du post: ", error)
         }
 
+    },
+
+    deletePost: async (req, res) => {
+        const postId = req.params.id;
+        const deletedPost = await PostModel.deletePost(postId)
+        res.redirect('/profile')
     }
 };
 

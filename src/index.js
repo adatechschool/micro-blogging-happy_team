@@ -51,6 +51,7 @@ app.get("/home", verifyToken, PostController.getHomeData);
 app.post("/add-post", verifyToken, PostController.createPost);
 
 app.get("/profile", verifyToken, ProfileController.getProfileData)
+app.post("/delete-post/:id", verifyToken, PostController.deletePost)
 
 app.get("/update-profile", verifyToken, UserController.getUser);
 app.post("/update-user", verifyToken, UserController.updateUser);

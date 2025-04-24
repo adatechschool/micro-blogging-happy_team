@@ -49,6 +49,14 @@ const PostModel = {
       })
       return postsByUser
     },
+
+    deletePost: async (postId) => {
+      const deletedPost = await prisma.posts.delete({
+        where: {
+          id: postId
+        }
+      })
+    }
 };
 
 module.exports = {

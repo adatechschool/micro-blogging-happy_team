@@ -7,30 +7,35 @@ const PostController = {
         const connectedUser = await UserModel.getUser(userId);
         const allPosts = await PostModel.getPosts();
 
-        function searchHashtag(object) {
-            for (let i = 0; i < object.length; i++) {
-                const content = allPosts[i].content;
-                console.log("content: ", [i], content);
+        // function searchHashtags(posts) {
+        //     for (let i = 0; i < posts.length; i++) {
+        //         const content = posts[i].content;
+        //         console.log("Post", i, "contenu:", content);
+        //
+        //         const regex = /#\w+/g;
+        //         const hashtags = content.match(regex);
+        //
+        //         if (hashtags) {
+        //             console.log("Hashtags trouvés:", hashtags);
+        //         } else {
+        //             console.log("Pas de hashtags dans ce post");
+        //         }
+        //     }
+        // }
 
-                const regex = /#\w+/g;
-                const hashtags = content.match(regex);
-                console.log(hashtags);
-            }
-        }
+        // const contentWithHashtag = searchHashtags(allPosts);
 
-        // const contentWithHashtag = searchHashtag(allPosts);
+        const processedPosts = allPosts.map(post => {
 
-        function jesaispas(object) {
-            const allPosts = object;
+            const processedPost = { ...post };
 
-            allPosts.forEach((element) => console.log(element));
-        }
-
-        jesaispas(allPosts);
+            return processedPost;
+        });
 
         res.render("home", { 
             user: connectedUser,
-            AllPosts: allPosts,
+            // parts: contentWithHashtag,
+            allPosts: processedPosts,
         });
     }, 
 

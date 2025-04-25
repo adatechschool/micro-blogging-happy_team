@@ -181,6 +181,10 @@ body {
   margin: 0.5rem 0 0.5rem 0;
 }
 
+.hashtag {
+  color: var(--rose);
+}
+
 .bottom-info {
   display: flex;
   justify-content: flex-end;

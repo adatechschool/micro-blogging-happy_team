@@ -27,7 +27,13 @@ html
                 for post in personalPosts
                     .post
                         h4 Posté par #{post.users.username} (@#{post.users.pseudo}) 
-                        p.content #{post.content}
+                        p.content
+                            - const words = post.content.split(/(\s+)/)
+                                each word in words
+                                    if word.match(/^#\w+/)
+                                        span.hashtag #{word}
+                                    else
+                                        | #{word}
                         .bottom-info
                             p.date=new Date(post.created_at).toLocaleString()
                             a(href=`/post/${post.id}`): button.update: img(src='/icons/editw.png' title='Modifier')

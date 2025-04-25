@@ -24,22 +24,16 @@ html
                 |  !
 
             form.creation(action="/add-post" method="POST")
-                textarea(name="content" placeholder="Rédiger un nouveau post.." rows="3" cols="50")
-                button(type="submit") Créer
+                textarea#post-content(name="content" placeholder="Rédiger un nouveau post.." rows="3" cols="50")
+                button#submit-button(type="submit" disabled) Créer
 
-            // for post in AllPosts
-            //     .post
-            //         h4 Posté par #{post.users.username} (@#{post.users.pseudo})
-            //         p.content
-            //             p.content
-            //                 - const text = post.content
-            //                 - const parts = text.split(/(#\w+)/g)
-            //                 each part in parts
-            //                     if part.startsWith('#')
-            //                         span.hashtag #{part}
-            //                     else
-            //                         | #{part}
-            //         p.date=new Date(post.created_at).toLocaleString()
+            script.
+                const textarea = document.getElementById('post-content');
+                const button = document.getElementById('submit-button');
+
+                textarea.addEventListener('input', function () {
+                    button.disabled = this.value.trim() === '';
+                });
 
             for post in allPosts
                 .post

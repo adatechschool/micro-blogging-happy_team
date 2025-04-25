@@ -7,24 +7,6 @@ const PostController = {
     const connectedUser = await UserModel.getUser(userId);
     const allPosts = await PostModel.getPosts();
 
-    // function searchHashtags(posts) {
-    //     for (let i = 0; i < posts.length; i++) {
-    //         const content = posts[i].content;
-    //         console.log("Post", i, "contenu:", content);
-    //
-    //         const regex = /#\w+/g;
-    //         const hashtags = content.match(regex);
-    //
-    //         if (hashtags) {
-    //             console.log("Hashtags trouvés:", hashtags);
-    //         } else {
-    //             console.log("Pas de hashtags dans ce post");
-    //         }
-    //     }
-    // }
-
-    // const contentWithHashtag = searchHashtags(allPosts);
-
     const processedPosts = allPosts.map((post) => {
       const processedPost = { ...post };
 
@@ -55,7 +37,7 @@ const PostController = {
     const userId = req.user.id;
 
     if (!content || content.trim() === "") {
-      return res.status(400).send("Le contenu du post ne peut pas être vide.");
+      res.status(400).send("Le contenu du post ne peut pas être vide.");
     }
 
     try {
@@ -70,9 +52,11 @@ const PostController = {
   updatePost: async (req, res) => {
     const { content } = req.body;
     const postId = req.params.id;
+
     if (!content || content.trim() === "") {
-      return res.status(400).send("Le contenu du post ne peut pas être vide.");
+      res.status(400).send("Le contenu du post ne peut pas être vide.");
     }
+
     try {
       const updatedPost = await PostModel.updatePost(postId, content);
       res.redirect("/profile");

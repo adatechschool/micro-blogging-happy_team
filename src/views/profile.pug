@@ -4,15 +4,15 @@ html
             include profile.css
     body
         aside.sidebar: h1.title Good vibes only
-            h3.yourProfile Ton profil
+            h3.yourProfile
             .userInfo
                 img.userIcon(src='/icons/user.png')
                 p.username #{user.username}
                 p.pseudo @#{user.pseudo}
                 .biography #{user.biography}
 
-            a(href="/update-profile"): button.modifyBtn Modifier
-            a(href="/home"): button.homeBtn Accueil
+            a(href="/update-profile",title='Modifier mon profil'): button.modifyBtn Modifier
+            a(href="/home",title=`Retour à l'accueil`): button.homeBtn Accueil
             a.logout(href="/disconnection")
                 button.logoutBtn
                     img.logoutIcon(src='/icons/logout.png')

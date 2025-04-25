@@ -79,11 +79,10 @@ h1 {
 }
 
 textarea {
-  margin-bottom: 15px;
-  max-width: 630px;
-  min-width: 630px;
-  max-height: 115px;
+  width: 100%;
   min-height: 115px;
+  max-height: 115px;
+  margin-bottom: 15px;
   padding: 0.9rem;
   border-radius: 0.6rem;
   font-size: 1rem;

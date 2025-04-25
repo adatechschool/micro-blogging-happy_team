@@ -54,19 +54,32 @@ const PostController = {
     const { content } = req.body;
     const userId = req.user.id;
 
+    if (!content || content.trim() === "") {
+      return res.status(400).send("Le contenu du post ne peut pas être vide.");
+    }
+
     try {
       const newPost = await PostModel.createPost(content, userId);
       res.redirect("/home");
     } catch (error) {
       console.error("Erreur lors de la création du post: ", error);
+      res.status(500).send("Erreur serveur lors de la création du post.");
     }
   },
 
   updatePost: async (req, res) => {
     const { content } = req.body;
     const postId = req.params.id;
-    const updatedPost = await PostModel.updatePost(postId, content);
-    res.redirect("/profile");
+    if (!content || content.trim() === "") {
+      return res.status(400).send("Le contenu du post ne peut pas être vide.");
+    }
+    try {
+      const updatedPost = await PostModel.updatePost(postId, content);
+      res.redirect("/profile");
+    } catch (error) {
+      console.error("Erreur lors de la mise à jour du post: ", error);
+      res.status(500).send("Erreur serveur lors de la mise à jour du post.");
+    }
   },
 
   deletePost: async (req, res) => {

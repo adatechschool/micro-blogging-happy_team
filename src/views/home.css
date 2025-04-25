@@ -103,12 +103,12 @@ body {
   background-color: var(--orange);
 }
 
-.logout{
+.logout {
   margin-top: auto;
   text-decoration: none;
 }
 
-.logoutBtn{
+.logoutBtn {
   display: flex;
   align-items: center;
   gap: 0.5rem;
@@ -123,7 +123,7 @@ body {
   align-self: flex-end;
 }
 
-.logoutBtn:hover{
+.logoutBtn:hover {
   background-color: var(--rose);
 }
 
@@ -212,7 +212,7 @@ body {
 .post {
   display: flex;
   flex-direction: column;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.8rem;
   width: 100%;
   background: rgba(255, 255, 255, 0.7);
   padding: 2.5rem;
@@ -224,6 +224,8 @@ body {
   box-shadow: var(--ombre);
   align-self: flex-start;
   transition: transform 0.2s ease;
+  border-left: 5px solid var(--violet);
+  padding-left: 1.5rem;
 }
 .post h4 {
   color: var(--rose);
@@ -244,21 +246,87 @@ body {
   align-self: flex-end;
 }
 
-/* RESPONSIVE */
-@media (max-width: 768px) {
+@media screen and (max-width: 1100px) {
+  body {
+    flex-direction: column;
+    align-items: center;
+  }
+
   .sidebar {
     width: 90vw;
-    position: static;
-    margin: 1rem auto;
+    height: auto;
+    position: relative;
+    margin: 1.5rem 0;
   }
 
   .main {
-    padding: 1rem;
-    align-items: center;
+    width: 90vw;
+    margin: 0;
+    padding: 1.5rem 0;
   }
 
   .creation,
   .post {
     width: 100%;
+  }
+
+  .pageTitle {
+    font-size: 2rem;
+  }
+
+  .modifyBtn,
+  .profileBtn {
+    font-size: 1rem;
+    padding: 0.9rem;
+    gap: 1rem;
+  }
+
+  .logoutBtn {
+    font-size: 0.95rem;
+  }
+}
+
+/* Mobile : optimisation petite largeur */
+@media screen and (max-width: 600px) {
+  .sidebar {
+    padding: 2rem 1.5rem 1rem;
+    width: 50vw;
+  }
+
+  .userIcon {
+    height: 2.5rem;
+    width: 2.5rem;
+  }
+
+  .title {
+    font-size: 1.6rem;
+    text-align: center;
+  }
+
+  .username {
+    font-size: 1rem;
+    text-align: center;
+  }
+
+  .pseudo {
+    font-size: 0.95rem;
+    text-align: center;
+  }
+
+  .main {
+    padding: 1rem 0.5rem;
+    align-items: stretch;
+  }
+
+  .pageTitle {
+    font-size: 1.7rem;
+  }
+
+  .creation button {
+    width: 100%;
+  }
+
+  .logoutBtn {
+    align-self: center;
   }
 }

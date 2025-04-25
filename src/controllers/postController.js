@@ -15,7 +15,6 @@ const PostController = {
 
     res.render("home", {
       user: connectedUser,
-      // parts: contentWithHashtag,
       allPosts: processedPosts,
     });
   },

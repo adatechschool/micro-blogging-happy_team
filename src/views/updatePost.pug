@@ -1,0 +1,15 @@
+html
+   head
+      style
+         include updatePost.css
+      title Update post
+   body
+      .main
+         .form-container
+            h1 Modifier votre post
+               form.formUpdate(action=`/update-post/${post.id}` method="POST")
+                  label
+                  textarea(name="content" rows="5" cols="78") #{post.content}
+                  .button-container 
+                     a(href="/home"): button.homeBtn Annuler
+                     button(type="submit") Valider

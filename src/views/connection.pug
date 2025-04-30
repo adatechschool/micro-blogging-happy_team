@@ -1,0 +1,32 @@
+//- html
+//-     head
+//-         title= title
+//-     body
+//-         h1= message
+//-         form(action="/login" method="POST")
+//-             label(for="email") email
+//-             input(type="text" name="email" required)
+//-             label(for="password") password
+//-             input(type="password" name="password" required)
+//-             button(type="submit") Submit
+
+html
+    head
+        style
+            include connection.css
+        title Connexion - Blog Positif
+    body
+        .layout
+            .left-content
+                p.description
+                    | Bienvenue sur notre réseau social positif ! Ici, nous partageons plus
+                    | que des moments : des émotions, des leçons de vie et des inspirations.
+                    | Rejoins-nous pour célébrer la beauté de chaque jour.
+                a(href="/inscription"): button Inscription
+            .form-container
+                form.formulaire(action="/login", method="POST")
+                    label(for="email") Email
+                    input#email(type="email", name="email", placeholder="exemple@email.com", required)
+                    label(for="password") Mot de passe
+                    input#password(type="password", name="password", placeholder="Mot de passe", required)
+                    button(type="submit") Connexion

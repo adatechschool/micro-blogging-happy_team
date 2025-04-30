@@ -1,0 +1,48 @@
+html 
+    head 
+        style
+            include home.css
+    body
+        aside.sidebar: h1.title Good vibes only
+            h3.yourProfile
+            .userInfo
+                img.userIcon(src='/icons/user.png')
+                p.username #{user.username}
+                p.pseudo @#{user.pseudo}
+                .biography #{user.biography}
+
+            //- a(href="/update-profile"): button.modifyBtn Modifier
+            a(href="/profile",title='Aller sur mon profil'): button.profileBtn Mon profil
+            a.logout(href="/disconnection")
+                button.logoutBtn
+                    img.logoutIcon(src='/icons/logout.png')
+                    |  Déconnexion
+        .main
+            h1.pageTitle 
+                | Bienvenue sur ton fil de positivité 
+                span.titleUsername #{user.username}
+                |  !
+
+            form.creation(action="/add-post" method="POST")
+                textarea#post-content(name="content" placeholder="Rédiger un nouveau post.." rows="3" cols="50")
+                button#submit-button(type="submit" disabled) Créer
+
+            script.
+                const textarea = document.getElementById('post-content');
+                const button = document.getElementById('submit-button');
+
+                textarea.addEventListener('input', function () {
+                    button.disabled = this.value.trim() === '';
+                });
+
+            for post in allPosts
+                .post
+                    h4 Posté par #{post.users.username} (@#{post.users.pseudo})
+                    p.content
+                        - const words = post.content.split(/(\s+)/)
+                            each word in words
+                                if word.match(/^#\w+/)
+                                    span.hashtag #{word}
+                                else
+                                    | #{word}
+                    p.date=new Date(post.created_at).toLocaleString()

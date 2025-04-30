@@ -1,0 +1,44 @@
+html 
+    head 
+        style
+            include profile.css
+    body
+        aside.sidebar: h1.title Good vibes only
+            h3.yourProfile
+            .userInfo
+                img.userIcon(src='/icons/user.png')
+                p.username #{user.username}
+                p.pseudo @#{user.pseudo}
+                .biography #{user.biography}
+
+            a(href="/update-profile",title='Modifier mon profil'): button.modifyBtn Modifier
+            a(href="/home",title=`Retour à l'accueil`): button.homeBtn Accueil
+            a.logout(href="/disconnection")
+                button.logoutBtn
+                    img.logoutIcon(src='/icons/logout.png')
+                    |  Déconnexion
+        .main
+            h1.pageTitle 
+                | Voici tes posts 
+                span.titleUsername #{user.username}
+                |  !
+
+            if personalPosts && personalPosts.length > 0
+                for post in personalPosts
+                    .post
+                        h4 Posté par #{post.users.username} (@#{post.users.pseudo}) 
+                        p.content
+                            - const words = post.content.split(/(\s+)/)
+                                each word in words
+                                    if word.match(/^#\w+/)
+                                        span.hashtag #{word}
+                                    else
+                                        | #{word}
+                        .bottom-info
+                            p.date=new Date(post.created_at).toLocaleString()
+                            a(href=`/post/${post.id}`): button.update: img(src='/icons/editw.png' title='Modifier')
+                            form(action=`/delete-post/${post.id}` method="POST" class="delete-form")
+                                button.delete(type="submit"): img(src='/icons/trash.png' title='Supprimer')
+            else
+                .no-post
+                    h3 Tu n'as pas encore de post. Créer ton premier post dès maintenant depuis la page d'accueil !

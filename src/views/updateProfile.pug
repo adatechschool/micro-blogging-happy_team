@@ -1,0 +1,23 @@
+html
+    head
+        style
+            include updateProfile.css
+        title Update profile
+    body
+        .main
+            .form-container
+                h1 Modifier votre profil
+                form.formUpdate(action="/update-user" method="POST")
+                    label Nom de l'utilisateur
+                    input(type="text" name= "username" value=user.username)
+                    label Pseudo
+                    input(type="text" name="pseudo" value=user.pseudo readonly="readonly")
+                    label Email
+                    input(type="text" name= "email" value=user.email)
+                    label Biographie
+                    textarea(name= "biography" rows="5" cols="78" maxlength="150") #{user.biography}
+                    //label Mot de passe
+                    //input(type="password" name= "password" value=user.password placeholder="*****")
+                    .button-container 
+                        a(href="/home"): button.homeBtn Annuler
+                        button(type="submit") Valider
